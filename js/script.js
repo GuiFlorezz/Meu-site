@@ -288,3 +288,25 @@ document.querySelectorAll('[data-contact-link]').forEach((link) => {
         link.rel = 'noopener noreferrer';
     }
 });
+
+// Preencha os links abaixo para ativar os perfis nas redes sociais.
+const socialProfiles = {
+    instagram: '', // Ex.: https://www.instagram.com/seuusuario
+    tiktok: '', // Ex.: https://www.tiktok.com/@seuusuario
+    threads: '', // Ex.: https://www.threads.net/@seuusuario
+    linkedin: '' // Ex.: https://www.linkedin.com/in/seuusuario
+};
+
+document.querySelectorAll('[data-social-link]').forEach((link) => {
+    const profileUrl = socialProfiles[link.dataset.socialLink];
+    if (!profileUrl) return;
+
+    link.href = profileUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.removeAttribute('aria-disabled');
+    link.removeAttribute('tabindex');
+});
+
+const currentYear = document.getElementById('current-year');
+if (currentYear) currentYear.textContent = new Date().getFullYear();

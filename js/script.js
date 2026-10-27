@@ -95,6 +95,39 @@ modal.addEventListener('click', (e) => {
     }
 });
 
+// Janelas de informações da seção Sobre
+document.querySelectorAll('[data-open-modal]').forEach((botao) => {
+    botao.addEventListener('click', () => {
+        const janela = document.getElementById(botao.dataset.openModal);
+        if (!janela) return;
+
+        janela.classList.add('show');
+        janela.setAttribute('aria-hidden', 'false');
+        janela.querySelector('[data-close-modal]')?.focus();
+    });
+});
+
+document.querySelectorAll('.info-modal').forEach((janela) => {
+    const fecharJanela = () => {
+        janela.classList.remove('show');
+        janela.setAttribute('aria-hidden', 'true');
+    };
+
+    janela.querySelector('[data-close-modal]').addEventListener('click', fecharJanela);
+    janela.addEventListener('click', (e) => {
+        if (e.target === janela) fecharJanela();
+    });
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.info-modal.show').forEach((janela) => {
+            janela.classList.remove('show');
+            janela.setAttribute('aria-hidden', 'true');
+        });
+    }
+});
+
 function criarCards() {
     wrapper.innerHTML = '';
     projetos.forEach((proj, i) => {

@@ -206,3 +206,52 @@ document.getElementById('btn-prev').addEventListener('click', () => {
 // Inicialização
 criarCards();
 atualizarCarousel3D();
+
+// Vincula o avanço horizontal da trajetória ao scroll vertical da página.
+const trajectorySection = document.getElementById('trajetoria');
+const trajectoryViewport = trajectorySection?.querySelector('.trajectory-viewport');
+const trajectoryList = document.getElementById('trajectory-list');
+
+if (trajectorySection && trajectoryViewport && trajectoryList) {
+    const trajectoryPin = trajectorySection.querySelector('.trajectory-pin');
+    const trajectoryItems = [...trajectoryList.querySelectorAll('.trajectory-item')];
+    let trajectoryScrollQueued = false;
+
+    trajectorySection.classList.add('is-scroll-driven');
+
+    function updateTrajectory() {
+        const travelDistance = Math.max(0, trajectoryList.scrollWidth - trajectoryViewport.clientWidth);
+        const scrollDistance = Math.max(1, trajectorySection.offsetHeight - trajectoryPin.offsetHeight);
+        const progress = Math.max(0, Math.min(1, -trajectorySection.getBoundingClientRect().top / scrollDistance));
+
+        trajectoryList.style.transform = `translate3d(${-travelDistance * progress}px, 0, 0)`;
+        trajectoryList.style.setProperty('--trajectory-progress', progress);
+
+        const activeIndex = Math.round(progress * Math.max(trajectoryItems.length - 1, 0));
+        trajectoryItems.forEach((item, index) => {
+            item.classList.toggle('is-past', index < activeIndex);
+            item.classList.toggle('is-current', index === activeIndex);
+        });
+    }
+
+    function queueTrajectoryUpdate() {
+        if (trajectoryScrollQueued) return;
+        trajectoryScrollQueued = true;
+        requestAnimationFrame(() => {
+            trajectoryScrollQueued = false;
+            updateTrajectory();
+        });
+    }
+
+    function resizeTrajectory() {
+        const travelDistance = Math.max(0, trajectoryList.scrollWidth - trajectoryViewport.clientWidth);
+        trajectorySection.style.setProperty('--trajectory-distance', `${travelDistance}px`);
+        queueTrajectoryUpdate();
+    }
+
+    window.addEventListener('scroll', queueTrajectoryUpdate, { passive: true });
+    window.addEventListener('resize', resizeTrajectory);
+    window.addEventListener('load', resizeTrajectory, { once: true });
+    document.fonts?.ready.then(resizeTrajectory);
+    resizeTrajectory();
+}

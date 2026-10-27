@@ -1,3 +1,27 @@
+// Configuração do ScrollReveal: as animações só se aplicam aos elementos
+// que recebem manualmente uma destas classes no HTML.
+if (typeof window.ScrollReveal === 'function') {
+    const sr = window.ScrollReveal({
+        duration: 800,
+        distance: '40px',
+        reset: false
+    });
+
+    sr.reveal('.reveal-baixo', { origin: 'bottom' });
+    sr.reveal('.reveal-cima', { origin: 'top' });
+    sr.reveal('.reveal-esquerda', { origin: 'left' });
+    sr.reveal('.reveal-direita', { origin: 'right' });
+
+    sr.reveal('.delay-1s', { delay: 150 });
+    sr.reveal('.delay-2s', { delay: 300 });
+    sr.reveal('.delay-3s', { delay: 450 });
+    sr.reveal('.delay-4s', { delay: 500 });
+    sr.reveal('.delay-5s', { delay: 550 });
+
+
+    sr.reveal('.reveal-imediato', { delay: 0 });
+}
+
 const projetos = [
     {
         titulo: "Landing Page",

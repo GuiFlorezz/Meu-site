@@ -255,3 +255,36 @@ if (trajectorySection && trajectoryViewport && trajectoryList) {
     document.fonts?.ready.then(resizeTrajectory);
     resizeTrajectory();
 }
+
+// Preencha estes valores para ativar os botões da seção de contato.
+const contactDestinations = {
+    email: '', // Ex.: guilherme@email.com
+    whatsapp: '', // DDI + DDD + número, apenas dígitos. Ex.: 5511999999999
+    resume: '' // Caminho relativo do currículo. Ex.: docs/curriculo.pdf
+};
+
+document.querySelectorAll('[data-contact-link]').forEach((link) => {
+    const destinationType = link.dataset.contactLink;
+    let href = '';
+
+    if (destinationType === 'email' && contactDestinations.email) {
+        href = `mailto:${contactDestinations.email}`;
+    } else if (destinationType === 'whatsapp' && contactDestinations.whatsapp) {
+        const phone = contactDestinations.whatsapp.replace(/\D/g, '');
+        if (phone) href = `https://wa.me/${phone}`;
+    } else if (destinationType === 'resume' && contactDestinations.resume) {
+        href = contactDestinations.resume;
+        link.setAttribute('download', '');
+    }
+
+    if (!href) return;
+
+    link.href = href;
+    link.removeAttribute('aria-disabled');
+    link.removeAttribute('tabindex');
+
+    if (destinationType === 'whatsapp') {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+    }
+});

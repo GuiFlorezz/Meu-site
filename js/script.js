@@ -23,6 +23,21 @@ if (typeof window.ScrollReveal === 'function') {
 }
 
 const projetos = [
+
+        {
+        titulo: "App de Trabalhos",
+        descricao: "Pense no Linkedin, só para trabalhos como pedreiros, eletrcistas, garçom e muito mais. Com foco em serviços braçal",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Exemplo de pedreiro, você depende do boca a boca para arrumar um pedreiro, ou ainda depende de cartazes para contratar pessoas para uma determinada tarefa, existe o linkedin mas é mais focado para outro tipo de situação." },
+            { titulo: "A solução", texto: "Aqui foi criado uma rede tanto para quem procura serviço tanto para quem quer contratar mão de obra. Para quem procura serviço ou até mesmo extra consegue facílmente na palma da mão." },
+            { titulo: "O que a plataforma oferece", texto: "Para quem quer contratar tanto serviço pessoal ou para sua empresa/negócio, tem acesso e pode anunciar vagas. O mesmo vale para quem está procurando um serviço fixo/temporário/extra, tem acesso a vagas e muito mais." }
+        ],
+        imgCapa: "img/imgProjetos/Aplicativo Bicos em destaque.png",
+        imgDetalhe: "img/imgProjetos/Aplicativo Bicos no Smartphone.png",
+        linkSite: "https://nivotechdev.github.io/Constru-o-Civil/mural",
+        linkGithub: "https://github.com/nivotechdev/Constru-o-Civil"
+    },
+
     {
         titulo: "Site Diportella",
         descricao: "Página focada em conversão com alto desempenho, responsiva e estruturada em HTML, CSS e JS.",
@@ -50,6 +65,7 @@ const projetos = [
         linkSite: "https://asmoveisplanejados.com.br/",
         linkGithub: "https://github.com/GuiFlorezz/Site-as-desing-de-ambi"
     },
+
     {
         titulo: "Site Supreme Lavagens ",
         descricao: "Aplicativo criado focado na experiência do usuário para facilitar o rastreamento de entregas.",
@@ -63,19 +79,7 @@ const projetos = [
         linkSite: "https://seusite.com",
         linkGithub: "https://github.com/GuiFlorezz/supreme-lavagem"
     },
-    {
-        titulo: "E-commerce",
-        descricao: "Loja virtual completa com integração de pagamentos e carrinho dinâmico.",
-        descricaoDetalhada: [
-            { titulo: "O desafio", texto: "Permitir que clientes conheçam os produtos e concluam uma compra com um processo claro e conveniente." },
-            { titulo: "A solução", texto: "Construção de uma loja virtual com catálogo organizado, carrinho e etapas de compra integradas." },
-            { titulo: "O que o site oferece", texto: "Consulta de produtos, gerenciamento do carrinho e um fluxo estruturado para finalizar pedidos." }
-        ],
-        imgCapa: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600",
-        imgDetalhe: "img/imgProjetos/e-commerce-detalhe.png",
-        linkSite: "https://seusite.com",
-        linkGithub: "https://github.com/seuusuario/projeto2"
-    },
+
     {
         titulo: "Dashboard Financeiro",
         descricao: "Painel de controle com gráficos interativos para análise de dados e fluxo de caixa empresarial.",

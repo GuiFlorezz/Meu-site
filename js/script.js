@@ -24,65 +24,120 @@ if (typeof window.ScrollReveal === 'function') {
 
 const projetos = [
     {
-        titulo: "Landing Page",
+        titulo: "Site Diportella",
         descricao: "Página focada em conversão com alto desempenho, responsiva e estruturada em HTML, CSS e JS.",
-        img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600",
-        linkSite: "https://seusite.com",
-        linkGithub: "https://github.com/seuusuario/projeto2"
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Apresentar os serviços da Diportella com clareza e transmitir confiança desde o primeiro contato, ajudando potenciais clientes a entender como iniciar um atendimento." },
+            { titulo: "A solução", texto: "Desenvolvimento de um site responsivo, com conteúdo organizado e chamadas para contato em pontos estratégicos da navegação." },
+            { titulo: "O que o site oferece", texto: "Uma apresentação digital dos serviços, acesso simples às informações da empresa e caminhos diretos para entrar em contato." }
+        ],
+        // Imagens locais: capa do card e imagem exibida na janela do projeto.
+        imgCapa: "img/imgProjetos/Diportella.png",
+        imgDetalhe: "img/imgProjetos/Diportella2.png",
+        linkSite: "https://www.dianeteportella.com.br/",
+        linkGithub: "https://github.com/nivotechdev/Site-Diportellarelaser"
     },
     {
-        titulo: "Sistema Web",
-        descricao: "Pequeno sistema desenvolvido para organização de tarefas. Autenticação e painel administrativo.",
-        img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600",
-        linkSite: "https://seusite.com",
-        linkGithub: "https://github.com/seuusuario/projeto2"
+        titulo: "Site A.S Desing",
+        descricao: "Página de apresentação de trabalho e conversão, estruturada em HTML, CSS E JS",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Mostrar o trabalho e os serviços da A.S Design de forma organizada, facilitando para novos clientes conhecerem a empresa e encontrarem referências dos projetos." },
+            { titulo: "A solução", texto: "Criação de um site responsivo que reúne a apresentação da empresa e dá destaque ao portfólio em uma navegação objetiva." },
+            { titulo: "O que o site oferece", texto: "Uma vitrine digital para os projetos e serviços, informações acessíveis em diferentes dispositivos e um caminho claro para iniciar uma conversa." }
+        ],
+        imgCapa: "img/imgProjetos/AS desing.png",
+        imgDetalhe: "img/imgProjetos/AS desing2.png",
+        linkSite: "https://asmoveisplanejados.com.br/",
+        linkGithub: "https://github.com/GuiFlorezz/Site-as-desing-de-ambi"
     },
     {
-        titulo: "App Mobile",
+        titulo: "Site Supreme Lavagens ",
         descricao: "Aplicativo criado focado na experiência do usuário para facilitar o rastreamento de entregas.",
-        img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Facilitar o acesso às informações sobre os serviços da Supreme Lavagens e ajudar clientes a encontrar a opção adequada às suas necessidades." },
+            { titulo: "A solução", texto: "Desenvolvimento de uma presença digital com conteúdo organizado e navegação simples, priorizando o acesso rápido às informações e ao contato." },
+            { titulo: "O que o site oferece", texto: "Apresentação dos serviços, informações úteis para os clientes e acesso direto aos canais de atendimento." }
+        ],
+        imgCapa: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600",
+        imgDetalhe: "img/imgProjetos/supreme-lavagens-detalhe.png",
         linkSite: "https://seusite.com",
-        linkGithub: "https://github.com/seuusuario/projeto2"
+        linkGithub: "https://github.com/GuiFlorezz/supreme-lavagem"
     },
     {
         titulo: "E-commerce",
         descricao: "Loja virtual completa com integração de pagamentos e carrinho dinâmico.",
-        img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Permitir que clientes conheçam os produtos e concluam uma compra com um processo claro e conveniente." },
+            { titulo: "A solução", texto: "Construção de uma loja virtual com catálogo organizado, carrinho e etapas de compra integradas." },
+            { titulo: "O que o site oferece", texto: "Consulta de produtos, gerenciamento do carrinho e um fluxo estruturado para finalizar pedidos." }
+        ],
+        imgCapa: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600",
+        imgDetalhe: "img/imgProjetos/e-commerce-detalhe.png",
         linkSite: "https://seusite.com",
         linkGithub: "https://github.com/seuusuario/projeto2"
     },
     {
         titulo: "Dashboard Financeiro",
         descricao: "Painel de controle com gráficos interativos para análise de dados e fluxo de caixa empresarial.",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Reunir dados financeiros que podem ficar dispersos e dificultar a leitura do desempenho e do fluxo de caixa." },
+            { titulo: "A solução", texto: "Criação de um painel que organiza os dados em indicadores e gráficos para tornar a consulta mais direta." },
+            { titulo: "O que o painel oferece", texto: "Visão centralizada das informações financeiras e recursos visuais para apoiar o acompanhamento dos dados." }
+        ],
+        imgCapa: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600",
+        imgDetalhe: "img/imgProjetos/dashboard-financeiro-detalhe.png",
         linkSite: "https://seusite.com",
         linkGithub: "https://github.com/seuusuario/projeto2"
     },
     {
         titulo: "API RESTful",
         descricao: "Arquitetura back-end segura e escalável utilizando Node.js e banco de dados relacional.",
-        img: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Disponibilizar dados e funcionalidades de forma consistente para que diferentes partes de uma aplicação possam se comunicar." },
+            { titulo: "A solução", texto: "Implementação de uma API RESTful com rotas organizadas e integração com banco de dados relacional." },
+            { titulo: "O que a API oferece", texto: "Uma interface estruturada para consultar e manipular recursos da aplicação por meio de requisições HTTP." }
+        ],
+        imgCapa: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600",
+        imgDetalhe: "img/imgProjetos/api-restful-detalhe.png",
         linkSite: "https://seusite.com",
         linkGithub: "https://github.com/seuusuario/projeto2"
     },
     {
         titulo: "Blog de Tecnologia",
         descricao: "Plataforma de artigos com sistema de CMS próprio, categorias e otimização forte para SEO.",
-        img: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Organizar artigos e facilitar que leitores encontrem conteúdos relevantes sem uma navegação confusa." },
+            { titulo: "A solução", texto: "Desenvolvimento de uma plataforma com artigos agrupados por categorias e páginas focadas na leitura." },
+            { titulo: "O que o site oferece", texto: "Publicação e consulta de conteúdos, navegação por categorias e uma estrutura preparada para mecanismos de busca." }
+        ],
+        imgCapa: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600",
+        imgDetalhe: "img/imgProjetos/blog-tecnologia-detalhe.png",
         linkSite: "https://seusite.com",
         linkGithub: "https://github.com/seuusuario/projeto2"
     },
     {
         titulo: "App de Clima",
         descricao: "Consumo de API de terceiros para exibir a previsão do tempo em tempo real com base na localização.",
-        img: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=600",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Consultar a previsão do tempo de uma localidade sem precisar interpretar informações dispersas em diferentes fontes." },
+            { titulo: "A solução", texto: "Criação de uma aplicação que consulta um serviço de clima e organiza os dados para a localização selecionada." },
+            { titulo: "O que o app oferece", texto: "Busca por localidade e visualização das condições do tempo em uma interface direta." }
+        ],
+        imgCapa: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=600",
+        imgDetalhe: "img/imgProjetos/app-clima-detalhe.png",
         linkSite: "https://seusite.com",
         linkGithub: "https://github.com/seuusuario/projeto2"
     },
     {
         titulo: "Jogo Web",
         descricao: "Pequeno jogo de lógica criado puramente com manipulação de DOM utilizando JavaScript Vanilla.",
-        img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600",
+        descricaoDetalhada: [
+            { titulo: "O desafio", texto: "Criar uma experiência interativa simples de entender, com regras claras e resposta imediata às ações do jogador." },
+            { titulo: "A solução", texto: "Desenvolvimento de um jogo para navegador com JavaScript, manipulando a interface conforme as ações realizadas." },
+            { titulo: "O que o jogo oferece", texto: "Uma experiência jogável diretamente no navegador, com controles e objetivo apresentados na própria interface." }
+        ],
+        imgCapa: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600",
+        imgDetalhe: "img/imgProjetos/jogo-web-detalhe.png",
         linkSite: "https://seusite.com",
         linkGithub: "https://github.com/seuusuario/projeto2"
     }
@@ -97,25 +152,48 @@ const wrapper = document.getElementById('carousel-3d-wrapper');
 const modal = document.getElementById('project-modal');
 const fecharModalBtn = document.getElementById('close-modal');
 
+function atualizarBloqueioRolagem() {
+    const existeModalAberto = document.querySelector('.custom-modal.show');
+    document.documentElement.classList.toggle('modal-open', Boolean(existeModalAberto));
+    document.body.classList.toggle('modal-open', Boolean(existeModalAberto));
+}
+
 // Função para abrir o modal e preencher os dados
 function abrirModal(proj) {
     document.getElementById('modal-title').innerText = proj.titulo;
-    document.getElementById('modal-desc').innerHTML = proj.descricaoDetalhada;
-    // Podes usar proj.imgDetalhe aqui se quiseres uma imagem diferente no modal
-    document.getElementById('modal-img').src = proj.img; 
+    const descricao = document.getElementById('modal-desc');
+    descricao.replaceChildren();
+    (Array.isArray(proj.descricaoDetalhada) ? proj.descricaoDetalhada : [
+        { titulo: "Sobre o projeto", texto: proj.descricaoDetalhada || proj.descricao }
+    ]).forEach((secao) => {
+        const bloco = document.createElement('section');
+        const titulo = document.createElement('h4');
+        const texto = document.createElement('p');
+        titulo.textContent = secao.titulo;
+        texto.textContent = secao.texto;
+        bloco.append(titulo, texto);
+        descricao.appendChild(bloco);
+    });
+    document.getElementById('modal-img').src = proj.imgDetalhe;
     document.getElementById('modal-link-site').href = proj.linkSite;
     document.getElementById('modal-link-github').href = proj.linkGithub;
     
     modal.classList.add('show');
+    atualizarBloqueioRolagem();
+}
+
+function fecharModal() {
+    modal.classList.remove('show');
+    atualizarBloqueioRolagem();
 }
 
 // Fechar modal ao clicar no X
-fecharModalBtn.addEventListener('click', () => modal.classList.remove('show'));
+fecharModalBtn.addEventListener('click', fecharModal);
 
 // Fechar modal ao clicar fora da caixa branca
 modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-        modal.classList.remove('show');
+        fecharModal();
     }
 });
 
@@ -127,6 +205,7 @@ document.querySelectorAll('[data-open-modal]').forEach((botao) => {
 
         janela.classList.add('show');
         janela.setAttribute('aria-hidden', 'false');
+        atualizarBloqueioRolagem();
         janela.querySelector('[data-close-modal]')?.focus();
     });
 });
@@ -135,6 +214,7 @@ document.querySelectorAll('.info-modal').forEach((janela) => {
     const fecharJanela = () => {
         janela.classList.remove('show');
         janela.setAttribute('aria-hidden', 'true');
+        atualizarBloqueioRolagem();
     };
 
     janela.querySelector('[data-close-modal]').addEventListener('click', fecharJanela);
@@ -145,10 +225,12 @@ document.querySelectorAll('.info-modal').forEach((janela) => {
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+        if (modal.classList.contains('show')) fecharModal();
         document.querySelectorAll('.info-modal.show').forEach((janela) => {
             janela.classList.remove('show');
             janela.setAttribute('aria-hidden', 'true');
         });
+        atualizarBloqueioRolagem();
     }
 });
 
@@ -159,7 +241,7 @@ function criarCards() {
         card.className = 'card-3d'; 
         
         card.innerHTML = `
-            <img src="${proj.img}" class="card-img-top" alt="${proj.titulo}">
+            <img src="${proj.imgCapa}" class="card-img-top" alt="${proj.titulo}">
             <div class="card-body">
                 <h4 class="card-title">${proj.titulo}</h4>
                 <p class="card-text">${proj.descricao}</p>

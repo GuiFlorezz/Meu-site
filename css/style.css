@@ -1014,6 +1014,11 @@ body {
 
 
 /* ===== Subjanela (Modal) ===== */
+html.modal-open,
+body.modal-open {
+    overflow: hidden;
+}
+
 .custom-modal {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -1174,6 +1179,8 @@ body {
     padding: 40px;
     display: flex;
     flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .modal-text-content h3 {
@@ -1186,12 +1193,28 @@ body {
 /* Área de Rolagem */
 .modal-scrollable-text {
     flex-grow: 1;
+    min-height: 0;
     overflow-y: auto; /* Cria a barra de rolagem vertical */
     padding-right: 15px;
     margin-bottom: 20px;
     color: #4a4a4a;
     line-height: 1.7;
     font-size: 0.95rem;
+}
+
+.modal-description section + section {
+    margin-top: 1.35rem;
+}
+
+.modal-description h4 {
+    margin: 0 0 0.4rem;
+    color: #212529;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.modal-description p {
+    margin: 0;
 }
 
 /* Estilizando a Barra de Rolagem (Scrollbar) */

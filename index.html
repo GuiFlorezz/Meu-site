@@ -24,23 +24,29 @@
 <body>
 
 <header class="site-header">
-    <nav class="container navbar-custom">
-        <a href="#" class="brand">Guilherme Flores<span>.</span></a>
+    <nav class="container navbar-custom" aria-label="Navegação principal">
+        <a href="#inicio" class="brand" aria-label="Ir para o início">
+            <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false"><path d="m11 8-8 8 8 8M21 8l8 8-8 8M19 5l-6 22" /></svg>
+        </a>
 
-        <div class="nav-links">
-            <a href="#projetos">Projetos</a>
+        <div class="nav-links" id="main-navigation">
             <a href="#sobre">Sobre</a>
             <a href="#trajetoria">Trajetória</a>
+             <a href="#projetos">Projetos</a>
             <a href="#contato" class="nav-contact">
                 Contato <span aria-hidden="true">↗</span>
             </a>
         </div>
+
+        <button class="mobile-menu-toggle" type="button" data-open-modal="mobile-menu-modal" aria-label="Abrir menu" aria-haspopup="dialog">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 </header>
 
 
 <main>
-    <section class="hero reveal-baixo">
+    <section class="hero reveal-baixo" id="inicio">
         <div class="ide-background" aria-hidden="true">
             <div class="ide-window ide-one">
                 <div class="ide-top">
@@ -324,6 +330,17 @@
             </div>
         </div>
     </section>
+
+    <div id="mobile-menu-modal" class="custom-modal info-modal mobile-menu-modal" aria-hidden="true">
+        <nav class="info-modal-content mobile-menu-content" role="dialog" aria-modal="true" aria-label="Menu do site">
+            <button type="button" class="close-btn" data-close-modal aria-label="Fechar menu">&times;</button>
+            <p class="info-modal-eyebrow">NAVEGAÇÃO</p>
+            <a href="#sobre">Sobre</a>
+            <a href="#trajetoria">Trajetória</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato <span aria-hidden="true">↗</span></a>
+        </nav>
+    </div>
 
         <!-- Subjanela (Modal) de Detalhes do Projeto -->
     <div id="project-modal" class="custom-modal">

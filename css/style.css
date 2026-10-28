@@ -2241,3 +2241,185 @@ body.modal-open {
         gap: 12px;
     }
 }
+
+/* Cabeçalho fixo que se transforma em uma ilha após o Hero */
+main {
+    padding-top: 80px;
+}
+
+.site-header {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    border: 0;
+    pointer-events: none;
+}
+
+.navbar-custom {
+    width: 100%;
+    pointer-events: auto;
+    transition: max-width 500ms cubic-bezier(0.22, 1, 0.36, 1),
+        min-height 500ms cubic-bezier(0.22, 1, 0.36, 1),
+        margin-top 500ms cubic-bezier(0.22, 1, 0.36, 1),
+        padding 500ms cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 350ms ease, border-radius 500ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 350ms ease, transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 400ms ease;
+}
+
+.brand svg {
+    display: block;
+    width: 34px;
+    height: 34px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nav-links a {
+    transition: color 200ms ease, transform 350ms ease;
+}
+
+.site-header.is-island .navbar-custom {
+    width: min(100% - 40px, 760px);
+    max-width: 760px;
+    min-height: 64px;
+    margin-top: 14px;
+    padding: 0 24px;
+    border: 1px solid rgba(41, 41, 37, 0.1);
+    border-radius: 999px;
+    background: rgba(250, 248, 243, 0.94);
+    box-shadow: 0 12px 36px rgba(41, 41, 37, 0.12);
+    backdrop-filter: blur(18px);
+}
+
+.site-header.is-island .brand svg {
+    width: 29px;
+    height: 29px;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 11px 9px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: width 350ms ease, height 350ms ease, background-color 250ms ease,
+        border-color 250ms ease, transform 350ms ease;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+}
+
+.mobile-menu-toggle:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobile-menu-content > a {
+    padding: 14px 0;
+    border-bottom: 1px solid #48473f;
+    color: #f0ede6;
+    font-size: 1.08rem;
+    text-decoration: none;
+}
+
+.mobile-menu-content > a:last-child {
+    border-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-top: 72px;
+    }
+
+    .site-header .navbar-custom {
+        min-height: 72px;
+        padding-inline: 24px;
+        align-items: center;
+    }
+
+    .site-header .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .site-header.is-island .navbar-custom {
+        width: calc(100% - 28px);
+        max-width: 520px;
+        min-height: 58px;
+        margin-top: 10px;
+        padding: 0 16px 0 19px;
+        align-items: center;
+    }
+
+    .site-header.is-island .brand svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .site-header.is-island .mobile-menu-toggle {
+        width: 38px;
+        height: 38px;
+        border-color: transparent;
+        background: rgba(41, 41, 37, 0.06);
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        padding-top: 68px;
+    }
+
+    .site-header .navbar-custom {
+        min-height: 68px;
+        padding-inline: 20px;
+        align-items: center;
+    }
+
+    .site-header.is-island .navbar-custom {
+        min-height: 56px;
+        margin-top: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar-custom,
+    .brand,
+    .nav-links a,
+    .mobile-menu-toggle {
+        transition-duration: 0.01ms;
+    }
+}

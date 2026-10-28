@@ -223,6 +223,15 @@ document.querySelectorAll('.info-modal').forEach((janela) => {
     });
 });
 
+document.querySelectorAll('#mobile-menu-modal a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu-modal');
+        menu.classList.remove('show');
+        menu.setAttribute('aria-hidden', 'true');
+        atualizarBloqueioRolagem();
+    });
+});
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (modal.classList.contains('show')) fecharModal();
@@ -312,6 +321,24 @@ document.getElementById('btn-prev').addEventListener('click', () => {
 // Inicialização
 criarCards();
 atualizarCarousel3D();
+
+// A ilha aparece quando o Hero sai da área visível e retorna ao voltar ao topo.
+const siteHeader = document.querySelector('.site-header');
+const heroSection = document.getElementById('inicio');
+
+if (siteHeader && heroSection && 'IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver(([entry]) => {
+        siteHeader.classList.toggle('is-island', !entry.isIntersecting);
+    }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' });
+
+    heroObserver.observe(heroSection);
+} else if (siteHeader && heroSection) {
+    const atualizarCabecalho = () => {
+        siteHeader.classList.toggle('is-island', window.scrollY >= heroSection.offsetHeight - 80);
+    };
+    window.addEventListener('scroll', atualizarCabecalho, { passive: true });
+    atualizarCabecalho();
+}
 
 // Vincula o avanço horizontal da trajetória ao scroll vertical da página.
 const trajectorySection = document.getElementById('trajetoria');

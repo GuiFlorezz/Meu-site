@@ -2423,3 +2423,18 @@ main {
         transition-duration: 0.01ms;
     }
 }
+
+@media (max-width: 768px) {
+    .social-links {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        overflow: visible;
+        scroll-snap-type: none;
+    }
+
+    .social-link {
+        width: 100%;
+        min-width: 0;
+        flex: none;
+    }
+}

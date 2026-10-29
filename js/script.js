@@ -185,6 +185,21 @@ document.querySelectorAll('#mobile-menu-modal a[href^="#"]').forEach((link) => {
     });
 });
 
+// Defina como "docs/curriculo.pdf" quando o arquivo for adicionado ao projeto.
+const resumeFile = 'docs/curriculo.pdf';
+const resumePreview = document.getElementById('resume-preview');
+const resumePending = document.getElementById('resume-pending');
+const resumeDownload = document.getElementById('resume-download');
+
+if (resumeFile) {
+    resumePreview.src = resumeFile;
+    resumePreview.hidden = false;
+    resumePending.hidden = true;
+    resumeDownload.href = resumeFile;
+    resumeDownload.setAttribute('download', 'curriculo.pdf');
+    resumeDownload.removeAttribute('aria-disabled');
+    resumeDownload.removeAttribute('tabindex');
+}
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (modal.classList.contains('show')) fecharModal();
@@ -344,8 +359,9 @@ if (trajectorySection && trajectoryViewport && trajectoryList) {
 
 // Preencha estes valores para ativar os botões da seção de contato.
 const contactDestinations = {
-    email: '', // Ex.: guilherme@email.com
-    whatsapp: '', // DDI + DDD + número, apenas dígitos. Ex.: 5511999999999
+    email: 'guifloresvaldo@gmail.com', // Ex.: guilherme@email.com
+    whatsapp: '5554991026542',
+    whatsappMessage: 'Ol\u00e1, Guilherme! Gostaria de conversar sobre um projeto de programação de tecnologia.', // DDI + DDD + número, apenas dígitos. Ex.: 5511999999999
     resume: '' // Caminho relativo do currículo. Ex.: docs/curriculo.pdf
 };
 
@@ -354,10 +370,10 @@ document.querySelectorAll('[data-contact-link]').forEach((link) => {
     let href = '';
 
     if (destinationType === 'email' && contactDestinations.email) {
-        href = `mailto:${contactDestinations.email}`;
+        href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactDestinations.email)}`;
     } else if (destinationType === 'whatsapp' && contactDestinations.whatsapp) {
         const phone = contactDestinations.whatsapp.replace(/\D/g, '');
-        if (phone) href = `https://wa.me/${phone}`;
+        if (phone) href = `https://wa.me/${phone}?text=${encodeURIComponent(contactDestinations.whatsappMessage)}`;
     } else if (destinationType === 'resume' && contactDestinations.resume) {
         href = contactDestinations.resume;
         link.setAttribute('download', '');
@@ -369,7 +385,7 @@ document.querySelectorAll('[data-contact-link]').forEach((link) => {
     link.removeAttribute('aria-disabled');
     link.removeAttribute('tabindex');
 
-    if (destinationType === 'whatsapp') {
+    if (destinationType === 'whatsapp' || destinationType === 'email') {
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
     }

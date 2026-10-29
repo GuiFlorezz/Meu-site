@@ -317,11 +317,11 @@
                     <h2>Vamos conversar sobre o próximo desafio?</h2>
                     <p class="contact-path-description reveal-baixo delay-3s">Tenho experiência em TI e desenvolvimento web, formação em Análise e Desenvolvimento de Sistemas e disposição para novos desafios. Confira meu currículo ou entre em contato.</p>
                     <div class="contact-path-actions">
-                        <a class="contact-path-button contact-path-button-light reveal-esquerda delay-3s" data-contact-link="resume" aria-disabled="true" tabindex="-1">
+                        <button type="button" class="contact-path-button contact-path-button-light reveal-esquerda delay-3s" data-open-modal="resume-modal" aria-haspopup="dialog">
                             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" /></svg>
                             Baixar currículo
-                        </a>
-                        <a class="contact-path-button contact-path-button-outline-light reveal-direita delay-3s" data-contact-link="email" aria-disabled="true" tabindex="-1">
+                        </button>
+                        <a class="contact-path-button contact-path-button-outline-light reveal-direita delay-3s" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=guifloresvaldo%40gmail.com" target="_blank" rel="noopener noreferrer">
                             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7" /></svg>
                             Entrar em contato
                         </a>
@@ -343,6 +343,16 @@
     </div>
 
         <!-- Subjanela (Modal) de Detalhes do Projeto -->
+    <div id="resume-modal" class="custom-modal info-modal resume-modal" aria-hidden="true">
+        <div class="info-modal-content resume-modal-content" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+            <button type="button" class="close-btn" data-close-modal aria-label="Fechar currículo">&times;</button>
+            <p class="info-modal-eyebrow">PARA RECRUTADORES</p>
+            <h2 id="resume-modal-title">Meu currículo</h2>
+            <p class="resume-pending" id="resume-pending">O currículo em PDF será exibido aqui assim que o arquivo for adicionado.</p>
+            <iframe class="resume-preview" id="resume-preview" title="Pré-visualização do currículo" hidden></iframe>
+            <a class="resume-download" id="resume-download" aria-disabled="true" tabindex="-1">Baixar currículo em PDF</a>
+        </div>
+    </div>
     <div id="project-modal" class="custom-modal">
         <div class="custom-modal-content">
             <!-- Botão de Fechar -->

@@ -2438,3 +2438,67 @@ main {
         flex: none;
     }
 }
+
+/* Janela de pré-visualização do currículo */
+.resume-modal-content {
+    width: min(900px, 100%);
+    max-height: min(90vh, 900px);
+}
+
+.resume-modal-content h2 {
+    margin: 0 0 18px;
+    color: #f0ede6;
+    font-size: clamp(1.6rem, 4vw, 2rem);
+}
+
+.resume-pending {
+    margin: 0 0 20px;
+    color: #b5b1a8;
+    line-height: 1.7;
+}
+
+.resume-preview {
+    display: block;
+    width: 100%;
+    height: min(62vh, 640px);
+    margin-bottom: 18px;
+    border: 0;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.resume-download {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border: 1px solid #f0ede6;
+    border-radius: 6px;
+    color: #292925;
+    background: #f0ede6;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.resume-download[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+@media (max-width: 576px) {
+    .resume-modal {
+        padding: 14px;
+    }
+
+    .resume-modal-content {
+        max-height: 90vh;
+        padding: 32px 22px 22px;
+    }
+
+    .resume-preview {
+        height: 55vh;
+    }
+}

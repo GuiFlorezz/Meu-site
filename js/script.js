@@ -125,9 +125,9 @@ const projetos = [
             { titulo: "A solução", texto: "Desenvolvimento de uma presença digital com conteúdo organizado e navegação simples, priorizando o acesso rápido às informações e ao contato." },
             { titulo: "O que o site oferece", texto: "Apresentação dos serviços, informações úteis para os clientes e acesso direto aos canais de atendimento." }
         ],
-        imgCapa: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600",
-        imgDetalhe: "img/imgProjetos/supreme-lavagens-detalhe.png",
-        linkSite: "https://seusite.com",
+        imgCapa: "img/imgProjetos/supreme.png",
+        imgDetalhe: "img/imgProjetos/supreme2.png",
+        linkSite: "https://supreme-lavagem.vercel.app/",
         linkGithub: "https://github.com/GuiFlorezz/supreme-lavagem"
     },
 

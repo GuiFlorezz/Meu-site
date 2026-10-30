@@ -394,9 +394,9 @@ document.querySelectorAll('[data-contact-link]').forEach((link) => {
 // Preencha os links abaixo para ativar os perfis nas redes sociais.
 const socialProfiles = {
     instagram: '', // Ex.: https://www.instagram.com/seuusuario
-    tiktok: '', // Ex.: https://www.tiktok.com/@seuusuario
+    tiktok: 'https://www.tiktok.com/@florez.dev?_r=1&_t=ZS-9AzLeUxeMAJ', // Ex.: https://www.tiktok.com/@seuusuario
     threads: '', // Ex.: https://www.threads.net/@seuusuario
-    linkedin: '' // Ex.: https://www.linkedin.com/in/seuusuario
+    linkedin: 'https://www.linkedin.com/in/guilherme-flores-933b42302?utm_source=share_via&utm_content=profile&utm_medium=member_ios' // Ex.: https://www.linkedin.com/in/seuusuario
 };
 
 document.querySelectorAll('[data-social-link]').forEach((link) => {

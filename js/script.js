@@ -377,9 +377,9 @@ document.querySelectorAll('[data-contact-link]').forEach((link) => {
 
 // Preencha os links abaixo para ativar os perfis nas redes sociais.
 const socialProfiles = {
-    instagram: '', // Ex.: https://www.instagram.com/seuusuario
+    instagram: 'https://www.instagram.com/florezdev?obrf=ajN6MmNwZzB5NTJl&utm_source=qr', 
     tiktok: '', // Ex.: https://www.tiktok.com/@seuusuario
-    threads: '', // Ex.: https://www.threads.net/@seuusuario
+    threads: 'https://www.threads.com/@euflorez_?igshid=NTc4MTIwNjQ2YQ==', 
     linkedin: '' // Ex.: https://www.linkedin.com/in/seuusuario
 };
 

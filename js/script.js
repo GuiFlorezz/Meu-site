@@ -7,19 +7,70 @@ if (typeof window.ScrollReveal === 'function') {
         reset: false
     });
 
-    sr.reveal('.reveal-baixo', { origin: 'bottom' });
-    sr.reveal('.reveal-cima', { origin: 'top' });
-    sr.reveal('.reveal-esquerda', { origin: 'left' });
-    sr.reveal('.reveal-direita', { origin: 'right' });
+    // Estas seções usam um gatilho próprio para não animarem no carregamento.
+    const outsideScrollSections = (selector) =>
+        `${selector}:not(#sobre):not(#sobre *):not(#trajetoria):not(#trajetoria *):not(#projetos):not(#projetos *)`;
 
-    sr.reveal('.delay-1s', { delay: 150 });
-    sr.reveal('.delay-2s', { delay: 300 });
-    sr.reveal('.delay-3s', { delay: 450 });
-    sr.reveal('.delay-4s', { delay: 500 });
-    sr.reveal('.delay-5s', { delay: 550 });
+    sr.reveal(outsideScrollSections('.reveal-baixo'), { origin: 'bottom' });
+    sr.reveal(outsideScrollSections('.reveal-cima'), { origin: 'top' });
+    sr.reveal(outsideScrollSections('.reveal-esquerda'), { origin: 'left' });
+    sr.reveal(outsideScrollSections('.reveal-direita'), { origin: 'right' });
+
+    sr.reveal(outsideScrollSections('.delay-1s'), { delay: 150 });
+    sr.reveal(outsideScrollSections('.delay-2s'), { delay: 300 });
+    sr.reveal(outsideScrollSections('.delay-3s'), { delay: 450 });
+    sr.reveal(outsideScrollSections('.delay-4s'), { delay: 500 });
+    sr.reveal(outsideScrollSections('.delay-5s'), { delay: 550 });
 
 
-    sr.reveal('.reveal-imediato', { delay: 0 });
+    sr.reveal(outsideScrollSections('.reveal-imediato'), { delay: 0 });
+}
+
+// Sobre, Trajetória e Projetos só começam a revelar depois do primeiro scroll.
+const scrollRevealTargets = document.querySelectorAll(
+    '#sobre.reveal-baixo, #sobre [class*="reveal-"], #trajetoria [class*="reveal-"], #projetos [class*="reveal-"]'
+);
+
+if ('IntersectionObserver' in window && scrollRevealTargets.length > 0 &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealDirections = {
+        'reveal-baixo': '0, 40px',
+        'reveal-bottom': '0, 40px',
+        'reveal-cima': '0, -40px',
+        'reveal-esquerda': '-40px, 0',
+        'reveal-direita': '40px, 0'
+    };
+    const revealDelays = {
+        'delay-1s': 150,
+        'delay-2s': 300,
+        'delay-3s': 450,
+        'delay-4s': 500,
+        'delay-5s': 550
+    };
+
+    scrollRevealTargets.forEach((element) => {
+        const direction = Object.keys(revealDirections).find((name) => element.classList.contains(name));
+        const delay = Object.entries(revealDelays).find(([name]) => element.classList.contains(name))?.[1] || 0;
+        const [x, y] = direction ? revealDirections[direction].split(', ') : ['0', '0'];
+
+        element.style.opacity = '0';
+        element.style.transform = `translate3d(${x}, ${y}, 0)`;
+        element.style.transition = `opacity 800ms ease ${delay}ms, transform 800ms ease ${delay}ms`;
+    });
+
+    const scrollRevealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translate3d(0, 0, 0)';
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.05, rootMargin: '0px 0px -8% 0px' });
+
+    window.addEventListener('scroll', () => {
+        scrollRevealTargets.forEach((element) => scrollRevealObserver.observe(element));
+    }, { once: true, passive: true });
 }
 
 const projetos = [
